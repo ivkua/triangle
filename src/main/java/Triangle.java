@@ -9,18 +9,28 @@ public class Triangle {
         this.side3 = side3;
     }
 
-    public String getType () {
-        if (side1 + side2 < side3 ||side1 + side3 < side2 ||side2 + side3 < side1 ) {
-            return "Error";
+    public int getType() {
+
+        if (Integer.max(Integer.max(side1, side2), side3) * 2 >= (side1 + side2 + side3) || Integer.min(Integer.min(side1, side2), side3) <= 0) {
+            return 4;
         }
-        if (side1 == side2 || side1 == side3 || side2 == side3 ) {
+        if (side1 == side2 || side1 == side3 || side2 == side3) {
             if (side1 == side2 && side2 == side3) {
-                return "Equilateral";
+                return 3;
             } else {
-                return "Isosceles";
+                return 2;
             }
         } else {
-            return "Scalene";
+            return 1;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "side1=" + side1 +
+                ", side2=" + side2 +
+                ", side3=" + side3 +
+                '}';
     }
 }
