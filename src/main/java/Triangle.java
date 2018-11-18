@@ -11,7 +11,8 @@ public class Triangle {
 
     public int getType() {
 
-        if (Integer.max(Integer.max(side1, side2), side3) * 2 >= (side1 + side2 + side3) || Integer.min(Integer.min(side1, side2), side3) <= 0) {
+        if (Integer.max(Integer.max(side1, side2), side3) * 2 >= (side1 + side2 + side3) 
+            || Integer.min(Integer.min(side1, side2), side3) <= 0) {
             return 4;
         }
         if (side1 == side2 || side1 == side3 || side2 == side3) {
