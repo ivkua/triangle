@@ -50,5 +50,4 @@ public class TriangleTest {
     public void getType() {
         assertEquals(expectedType, triangle.getType());
     }
-
 }
